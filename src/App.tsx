@@ -8,11 +8,11 @@ import MainDashboard from './pages/MainDashboard';
 import InfrastructureVulnerabilityPage from './pages/InfrastructureVulnerabilityPage';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('dashboard');
+  const [currentPage, setCurrentPage] = useState('infrastructure-vulnerability');
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'infrastructure-vulnerability':
+      case 'dashboard':
         return <InfrastructureVulnerabilityPage />;
       case 'admin':
         return <AdminPage />;
