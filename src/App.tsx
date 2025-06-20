@@ -7,14 +7,15 @@ import JiraDataPage from './pages/JiraDataPage';
 import ThirdPartyConfigPage from './pages/ThirdPartyConfigPage';
 import MainDashboard from './pages/MainDashboard';
 
-
 function App() {
   const [currentPage, setCurrentPage] = useState('infrastructure-vulnerability');
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'dashboard':
+      case 'infrastructure-vulnerability':
         return <InfrastructureVulnerabilityPage />;
+      case 'dashboard':
+        return <MainDashboard />;
       case 'admin':
         return <AdminPage />;
       case 'jira':
@@ -22,7 +23,7 @@ function App() {
       case 'integrations':
         return <ThirdPartyConfigPage />;
       default:
-        return <MainDashboard />;
+        return <InfrastructureVulnerabilityPage />;
     }
   };
 
