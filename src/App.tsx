@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Layout from './components/layout/Layout';
+import InfrastructureVulnerabilityPage from './pages/InfrastructureVulnerabilityPage';
 import Dashboard from './pages/Dashboard';
 import AdminPage from './pages/AdminPage';
 import JiraDataPage from './pages/JiraDataPage';
 import ThirdPartyConfigPage from './pages/ThirdPartyConfigPage';
 import MainDashboard from './pages/MainDashboard';
-import InfrastructureVulnerabilityPage from './pages/InfrastructureVulnerabilityPage';
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState('infrastructure-vulnerability');
