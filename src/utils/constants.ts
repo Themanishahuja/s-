@@ -55,6 +55,7 @@ export const dashboardCards = [
 ];
 
 export const navItems = [
+  { title: 'Roles', path: '/roles' },
   { title: 'Dashboard', path: '/' },
   { title: 'Infrastructure Vulnerability', path: '/infrastructure-vulnerability' },
   { title: 'Analytics', path: '/analytics' },

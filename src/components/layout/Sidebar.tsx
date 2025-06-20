@@ -7,7 +7,9 @@ import {
   Server, 
   BarChart3, 
   Bell, 
-  Settings 
+  Settings,
+  Shield,
+  Users
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -15,11 +17,12 @@ interface SidebarProps {
   setCurrentPage?: (page: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ currentPage = 'dashboard', setCurrentPage }) => {
+const Sidebar: React.FC<SidebarProps> = ({ currentPage = 'roles', setCurrentPage }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const getIcon = (title: string) => {
     switch (title) {
+      case 'Roles': return <Shield size={20} />;
       case 'Dashboard': return <LayoutDashboard size={20} />;
       case 'Infrastructure Vulnerability': return <Server size={20} />;
       case 'Analytics': return <BarChart3 size={20} />;
@@ -31,12 +34,13 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage = 'dashboard', setCurrent
 
   const getPageKey = (title: string) => {
     switch (title) {
+      case 'Roles': return 'roles';
       case 'Dashboard': return 'dashboard';
       case 'Infrastructure Vulnerability': return 'infrastructure-vulnerability';
       case 'Analytics': return 'analytics';
       case 'Alerts': return 'alerts';
       case 'Settings': return 'settings';
-      default: return 'dashboard';
+      default: return 'roles';
     }
   };
 
