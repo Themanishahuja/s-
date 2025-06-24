@@ -10,7 +10,7 @@ import ThirdPartyConfigPage from './pages/ThirdPartyConfigPage';
 import MainDashboard from './pages/MainDashboard';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('roles');
+  const [currentPage, setCurrentPage] = useState('AddRolePage');
   const [showAddRole, setShowAddRole] = useState(false);
 
   const renderPage = () => {
