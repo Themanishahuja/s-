@@ -27,7 +27,11 @@ interface Role {
   lastModified?: string;
 }
 
-const RolesPage: React.FC = () => {
+interface RolesPageProps {
+  onAddRole: () => void;
+}
+
+const RolesPage: React.FC<RolesPageProps> = ({ onAddRole }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRoles, setSelectedRoles] = useState<number[]>([]);
@@ -138,7 +142,10 @@ const RolesPage: React.FC = () => {
                 Import
               </button>
               
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
+              <button 
+                onClick={onAddRole}
+                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+              >
                 <Plus size={18} />
                 Add Role
               </button>

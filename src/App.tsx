@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Layout from './components/layout/Layout';
 import RolesPage from './pages/RolesPage';
+import AddRolePage from './pages/AddRolePage';
 import InfrastructureVulnerabilityPage from './pages/InfrastructureVulnerabilityPage';
 import Dashboard from './pages/Dashboard';
 import AdminPage from './pages/AdminPage';
@@ -10,11 +11,16 @@ import MainDashboard from './pages/MainDashboard';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('roles');
+  const [showAddRole, setShowAddRole] = useState(false);
 
   const renderPage = () => {
+    if (currentPage === 'roles' && showAddRole) {
+      return <AddRolePage onBack={() => setShowAddRole(false)} />;
+    }
+
     switch (currentPage) {
       case 'roles':
-        return <RolesPage />;
+        return <RolesPage onAddRole={() => setShowAddRole(true)} />;
       case 'infrastructure-vulnerability':
         return <InfrastructureVulnerabilityPage />;
       case 'dashboard':
@@ -26,9 +32,14 @@ function App() {
       case 'integrations':
         return <ThirdPartyConfigPage />;
       default:
-        return <RolesPage />;
+        return <RolesPage onAddRole={() => setShowAddRole(true)} />;
     }
   };
+
+  // Don't show layout for Add Role page
+  if (currentPage === 'roles' && showAddRole) {
+    return renderPage();
+  }
 
   return (
     <Layout currentPage={currentPage} setCurrentPage={setCurrentPage}>
