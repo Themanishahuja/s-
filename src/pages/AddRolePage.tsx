@@ -378,7 +378,7 @@ const AddRolePage: React.FC<AddRolePageProps> = ({ onBack }) => {
                             className="rounded border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500/20"
                           />
                         </td>
-                      </tr>
+                      </motion.tr>
                     );
                   })}
                 </tbody>
