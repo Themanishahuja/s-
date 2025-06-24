@@ -15,12 +15,12 @@ function App() {
 
   const renderPage = () => {
     if (currentPage === 'roles' && showAddRole) {
-      return <AddRolePage onBack={() => setShowAddRole(false)} />;
+      return <RolesPage onBack={() => setShowAddRole(false)} />;
     }
 
     switch (currentPage) {
-      case 'roles':
-        return <RolesPage onAddRole={() => setShowAddRole(true)} />;
+      case 'AddRolePage':
+        return <AddRolePage onAddRole={() => setShowAddRole(true)} />;
       case 'infrastructure-vulnerability':
         return <InfrastructureVulnerabilityPage />;
       case 'dashboard':
